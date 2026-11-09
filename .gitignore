@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.eggs/
+*.tmp
+# local outputs and caches
+gaap/
+out/
+.cache/

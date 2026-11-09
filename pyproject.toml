@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "legacygaap"
+dynamic = ["version"]
+description = "Gaussian-Aperture-and-PSF (GAaP) photometry for legacypipe (Legacy Surveys) products"
+readme = "README.md"
+license = "BSD-3-Clause"
+license-files = ["LICENSE", "NOTICE.md"]
+authors = [{ name = "Yifei Luo" }]
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.8",
+    "astropy>=5.0",
+    "fitsio>=1.1",
+    "matplotlib>=3.5",
+]
+keywords = ["astronomy", "photometry", "GAaP", "legacypipe", "Legacy Surveys", "photometric redshifts"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Astronomy",
+]
+
+[project.urls]
+Repository = "https://github.com/yluo54301/legacygaap"
+Issues = "https://github.com/yluo54301/legacygaap/issues"
+Documentation = "https://github.com/yluo54301/legacygaap/tree/main/docs"
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+gaap-brick = "legacygaap.cli:main"
+
+[tool.setuptools]
+packages = ["legacygaap"]
+
+[tool.setuptools.package-data]
+legacygaap = ["data/*.npz"]
+
+[tool.setuptools.dynamic]
+version = { attr = "legacygaap.__version__" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "nersc: reads Legacy Surveys products at NERSC (skipped elsewhere)",
+    "legacypipe: compares with legacypipe/tractor/astrometry.net (run inside the legacypipe Shifter image)",
+]

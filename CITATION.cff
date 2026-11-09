@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use legacygaap, please cite the GAaP method papers listed in the README and this software."
+title: "legacygaap: Gaussian-Aperture-and-PSF photometry for legacypipe products"
+type: software
+authors:
+  - family-names: Luo
+    given-names: Yifei
+version: 0.1.0
+date-released: "2026-11-08"
+license: BSD-3-Clause
+repository-code: "https://github.com/yluo54301/legacygaap"
+keywords:
+  - astronomy
+  - photometry
+  - GAaP
+  - Legacy Surveys
+references:
+  - type: article
+    authors:
+      - family-names: Kuijken
+        given-names: Konrad
+    title: "GaaP: PSF- and aperture-matched photometry using shapelets"
+    journal: "Astronomy & Astrophysics"
+    volume: 482
+    start: 1053
+    year: 2008
+  - type: article
+    authors:
+      - family-names: Kuijken
+        given-names: Konrad
+    title: "Gravitational lensing analysis of the Kilo-Degree Survey"
+    journal: "Monthly Notices of the Royal Astronomical Society"
+    volume: 454
+    start: 3500
+    year: 2015
